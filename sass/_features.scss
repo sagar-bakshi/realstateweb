@@ -1,4 +1,19 @@
 .features{
-  background-color: $color-grey-light-2;
   grid-column: center-start/center-end;
+
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.feature{
+
+  &__icon{
+      fill: $color-primary;
+    width: 4.5rem;
+    height: 4.5rem;
+  }
+
+  &__text{
+    font-size: 1.7rem;
+  }
 }
