@@ -88,17 +88,33 @@ body {
   grid-column: full-start/col-end 6;
   background-image: linear-gradient(rgba(16, 29, 44, 0.93), rgba(16, 29, 44, 0.93)), url("../img/hero.jpeg");
   background-size: cover;
+  background-position: center;
   padding: 8rem;
   padding-top: 4.5rem;
   justify-content: center;
   display: grid;
-  grid-template-rows: 1fr min-content 6rem;
+  grid-template-rows: 1fr min-content 6rem 1fr;
   grid-gap: 1rem; }
   .header__seenon-text {
-    color: #f9f7f6; }
-  .header__seenon-logos img {
-    height: 2.5rem;
-    margin-right: 2.5rem; }
+    display: grid;
+    grid-template-columns: 1fr max-content 1fr;
+    align-items: center;
+    grid-column-gap: 1.6rem;
+    color: #aaa;
+    font-size: 1.5rem; }
+    .header__seenon-text::before, .header__seenon-text::after {
+      content: "";
+      height: 1px;
+      background-color: #fff;
+      display: block; }
+  .header__seenon-logos {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 2.5rem; }
+    .header__seenon-logos img {
+      height: 2.5rem;
+      filter: brightness(70%);
+      justify-self: center; }
   .header__logo {
     height: 3.5rem;
     justify-self: center; }
@@ -108,7 +124,25 @@ body {
 
 .realtors {
   background-color: #101d2c;
-  grid-column: col-start 7/  full-end; }
+  grid-column: col-start 7/  full-end;
+  display: grid;
+  justify-content: center;
+  align-content: center;
+  justify-items: center;
+  grid-row-gap: 2rem; }
+  .realtors__sold {
+    text-transform: uppercase;
+    color: #aaa;
+    margin-top: -3px; }
+  .realtors__list {
+    display: grid;
+    grid-template-columns: min-content max-content;
+    grid-column-gap: 1rem;
+    align-items: center; }
+  .realtors__img {
+    width: 7rem;
+    border-radius: 50px;
+    display: block; }
 
 .features {
   grid-column: center-start/center-end;
@@ -273,4 +307,33 @@ body {
 
 .footer {
   background-color: #101d2c;
-  grid-column: full-start/full-end; }
+  grid-column: full-start/full-end;
+  padding: 4rem; }
+
+.nav {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+  grid-gap: 2rem;
+  align-items: center; }
+  .nav__link:visited, .nav__link:link {
+    text-transform: uppercase;
+    font-family: "Josefin Sans", sans-serif;
+    font-size: 1.5rem;
+    text-decoration: none;
+    color: #fff;
+    text-align: center;
+    display: block;
+    padding: 1.5rem;
+    transition: all .2s; }
+  .nav__link:hover, .nav__link:active {
+    background-color: rgba(255, 255, 255, 0.05);
+    transform: translateY(-3px); }
+
+.copyright {
+  font-size: 1.5rem;
+  color: #aaa;
+  margin-right: auto;
+  margin-left: auto;
+  margin-top: 1.5rem;
+  text-align: center; }

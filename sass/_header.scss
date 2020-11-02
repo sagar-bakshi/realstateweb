@@ -3,6 +3,7 @@
   grid-column: full-start/col-end 6;
   background-image: linear-gradient(rgba($color-secondary, .93),rgba($color-secondary, .93)),url("../img/hero.jpeg");
   background-size: cover;
+  background-position: center;
 
   padding: 8rem;
   padding-top: 4.5rem;
@@ -10,18 +11,37 @@
 
   display: grid;
   //grid-template-columns: repeat(4, 1fr);
-  grid-template-rows: 1fr min-content 6rem;
+  grid-template-rows: 1fr min-content 6rem 1fr;
   grid-gap: 1rem;
 
   &__seenon{
 
     &-text{
-      color: $color-grey-light-1;
+      display: grid;
+      grid-template-columns: 1fr max-content 1fr;
+      align-items: center;
+      grid-column-gap: 1.6rem;
+      color: $color-grey-light-2;
+      font-size: 1.5rem;
+
+      &::before,
+       &::after{
+        content: "";
+        height: 1px;
+        background-color: #fff;
+        display: block;
+    }
+
     }
     &-logos{
+      display: grid;
+      grid-template-columns: repeat(4,1fr);
+      grid-gap: 2.5rem;
+
         img{
           height: 2.5rem;
-          margin-right: 2.5rem;
+          filter: brightness(70%);
+          justify-self: center;
         }
     }
   }
