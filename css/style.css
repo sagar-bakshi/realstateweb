@@ -327,7 +327,6 @@ body {
       margin-right: 1rem; }
 
 .gallery {
-  background-color: #54483A;
   grid-column: full-start/full-end;
   display: grid;
   grid-template-columns: repeat(8, 1fr);
