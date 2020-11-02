@@ -81,7 +81,28 @@ body {
 .sidebar {
   background-color: #c69963;
   grid-column: sidebar-start/sidebar-end;
-  grid-row: 1/-1; }
+  grid-row: 1/-1;
+  display: flex;
+  justify-content: center; }
+
+.nav-btn {
+  border: none;
+  border-radius: 0;
+  height: 2px;
+  width: 4.5rem;
+  background-color: #fff; }
+  .nav-btn::before, .nav-btn::after {
+    height: 2px;
+    width: 4.5rem;
+    content: "";
+    background-color: #fff;
+    display: block; }
+  .nav-btn::after {
+    transform: translateY(1.2rem); }
+  .nav-btn::before {
+    transform: translateY(-1.5rem); }
+  .nav-btn:hover {
+    cursor: pointer; }
 
 .header {
   background-color: #54483A;
