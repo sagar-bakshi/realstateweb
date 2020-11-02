@@ -4,9 +4,21 @@
   grid-row: 1/-1;
   display: flex;
   justify-content: center;
+
+  @media only screen and (max-width: $bp-large) {
+    grid-column: 1/-1;
+    grid-row: 1/2;
+    display: flex;
+    justify-content: flex-end;
+  }
+
 }
 
 .nav-btn{
+
+  @media only screen and (max-width: $bp-large) {
+      margin-top: -2rem;
+  }
 
   border: none;
   border-radius: 0;
@@ -26,9 +38,5 @@
 
   &::after {transform: translateY(1.2rem)}
   &::before {transform: translateY(-1.5rem)}
-
-  &:hover{
-    cursor: pointer;
-  }
 
 }

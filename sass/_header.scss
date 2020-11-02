@@ -11,8 +11,17 @@
 
   display: grid;
   //grid-template-columns: repeat(4, 1fr);
-  grid-template-rows: 1fr min-content 6rem 1fr;
+  grid-template-rows: 1fr min-content minmax(6rem, min-content) 1fr;
+  grid-template-columns: minmax(min-content, max-content);
   grid-gap: 1rem;
+
+  @media only screen and (max-width: $bp-medium) {
+    grid-column: 1/-1;
+  }
+
+  @media only screen and (max-width: $bp-small) {
+    padding: 5rem;
+  }
 
   &__seenon{
 
@@ -37,9 +46,11 @@
       display: grid;
       grid-template-columns: repeat(4,1fr);
       grid-gap: 2.5rem;
+      align-items: center;
 
         img{
-          height: 2.5rem;
+          min-height: 2.5rem;
+          max-width: 80%;
           filter: brightness(70%);
           justify-self: center;
         }
